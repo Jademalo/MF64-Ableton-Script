@@ -11,16 +11,13 @@ from _Framework.ButtonMatrixElement import ButtonMatrixElement
 from _Framework.SessionComponent import SessionComponent
 from _Framework.EncoderElement import *
 from Launchpad.ConfigurableButtonElement import ConfigurableButtonElement
-from pushbase import colors
-from SkinDefault import make_rgb_skin, make_default_skin
+from . import Colors
 
 
 class Midi_Fighter_64(ControlSurface):
 
 	def __init__(self, c_instance):
 		super(Midi_Fighter_64, self).__init__(c_instance)
-		self._color_skin = make_rgb_skin()
-		self._default_skin = make_default_skin()
 		with self.component_guard():
 			global _map_modes
 			_map_modes = Live.MidiMap.MapMode
@@ -48,9 +45,7 @@ class Midi_Fighter_64(ControlSurface):
 		num_tracks = 8
 		num_scenes = 7
 		self._session = SessionComponent(num_tracks, num_scenes)
-  		clip_color_table = colors.LIVE_COLORS_TO_MIDI_VALUES.copy()
- 		clip_color_table[16777215] = 119
- 		self._session.set_rgb_mode(colors.LIVE_COLORS_TO_MIDI_VALUES, colors.RGB_COLOR_TABLE)
+ 		self._session.set_rgb_mode(Colors.LIVE_COLORS_TO_MIDI_VALUES, Colors.RGB_COLOR_TABLE)
 		track_offset = self.current_track_offset
 		scene_offset = self.current_scene_offset
 		self._session.set_offsets(track_offset, scene_offset)
@@ -126,9 +121,7 @@ class Midi_Fighter_64(ControlSurface):
 		num_scenes = 7
 # 		self._session = SessionComponent(auto_name=True, is_enabled=False, enable_skinning=True)
 		self._session = SessionComponent(num_tracks, num_scenes)
-  		clip_color_table = colors.LIVE_COLORS_TO_MIDI_VALUES.copy()
- 		clip_color_table[16777215] = 119
- 		self._session.set_rgb_mode(colors.LIVE_COLORS_TO_MIDI_VALUES, colors.RGB_COLOR_TABLE)
+ 		self._session.set_rgb_mode(Colors.LIVE_COLORS_TO_MIDI_VALUES, Colors.RGB_COLOR_TABLE)
 		track_offset = self.current_track_offset
 		scene_offset = self.current_scene_offset
 		self._session.set_offsets(track_offset, scene_offset)
@@ -207,9 +200,7 @@ class Midi_Fighter_64(ControlSurface):
 		num_tracks = 8
 		num_scenes = 7
 		self._session = SessionComponent(num_tracks, num_scenes)
-  		clip_color_table = colors.LIVE_COLORS_TO_MIDI_VALUES.copy()
- 		clip_color_table[16777215] = 119
- 		self._session.set_rgb_mode(colors.LIVE_COLORS_TO_MIDI_VALUES, colors.RGB_COLOR_TABLE)
+ 		self._session.set_rgb_mode(Colors.LIVE_COLORS_TO_MIDI_VALUES, Colors.RGB_COLOR_TABLE)
 		track_offset = self.current_track_offset
 		scene_offset = self.current_scene_offset
 		self._session.set_offsets(track_offset, scene_offset)
@@ -379,9 +370,7 @@ class Midi_Fighter_64(ControlSurface):
 		num_tracks = 8
 		num_scenes = 7
 		self._session = SessionComponent(num_tracks, num_scenes)
-  		clip_color_table = colors.LIVE_COLORS_TO_MIDI_VALUES.copy()
- 		clip_color_table[16777215] = 119
- 		self._session.set_rgb_mode(colors.LIVE_COLORS_TO_MIDI_VALUES, colors.RGB_COLOR_TABLE)
+ 		self._session.set_rgb_mode(Colors.LIVE_COLORS_TO_MIDI_VALUES, Colors.RGB_COLOR_TABLE)
 		track_offset = self.current_track_offset
 		scene_offset = self.current_scene_offset
 		self._session.set_offsets(track_offset, scene_offset)
