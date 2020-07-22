@@ -4,11 +4,11 @@ It features four "modes" that have different functions, described in this docume
 
 **To use this script, follow the README.md file for placing the folder in the correct directory. Addtionally, you must use the Midi Fighter Utility
 and set the "Corner Button Bank Change" option to "Held." This switches between MIDI channel 3 and 2 when using the Midi Fighter 64 (if you set a MIDI
-channel different to the default, bank 1 will be channel n and bank 2 will be channel n+1). 
+channel different to the default, bank 1 will be channel n and bank 2 will be channel n+1).
 When entering Live, hold the top right corner button to enter bank 2, which is now used for launching clips now that the script installed.
 When you would like to return to the default functionality of the Midi Fighter 64, hold the top left button.**
 
-Notes: for the sake of clarity, buttons will be labelled starting in the top left and moving left to right, 
+Notes: for the sake of clarity, buttons will be labelled starting in the top left and moving left to right,
 NOT according to what MIDI notes they send. Follow them as you would reading a book. The colors mentioned in
 this file are subject to change as I continue to work on the script. Changing modes will result in a message
 saying "_mode# is active"
@@ -21,7 +21,7 @@ The first four dark green buttons correspond to the first four tracks.
 The buttons underneath these correspond to any clips within these tracks in Live's session view.
 The colors of these buttons roughly match the colors of the clips present.
 Pressing these buttons launches the corresponding session clip.
-Clips are orange as they are being quantized and dark red as they are playing 
+Clips are orange as they are being quantized and dark red as they are playing
 
 -----------------------------------------------------------------------------------------------------
 
@@ -29,7 +29,6 @@ MODE 1:
 
 Default mode. Button 5 is light blue when in this mode.
 The first two buttons in the upper left switch between scenes 1-7 and 8-14.
-Possible bug: If there are more than 14 scenes it will skip 8-14 and move to the bottom seven scenes instead.
 
 -----------------------------------------------------------------------------------------------------
 
@@ -37,7 +36,7 @@ MODE 2:
 
 Momentary mode.
 Holding button 8 will cause all of column 8 to turn dark red.
-Each row (buttons 16, 24, 32, 40, 48. 56, and 64) will play the corresponding master scene. 
+Each row (buttons 16, 24, 32, 40, 48. 56, and 64) will play the corresponding master scene.
 
 -----------------------------------------------------------------------------------------------------
 
