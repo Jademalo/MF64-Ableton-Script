@@ -60,7 +60,7 @@ class Midi_Fighter_64(ControlSurface):
 		self._grid = ButtonMatrixElement(rows=[self._pads[(index*num_tracks):(index*num_tracks)+num_tracks] for index in range(num_scenes)])
 		self._session.set_clip_launch_buttons(self._grid)
 		# LED feedback
-		self._session._enable_skinning()
+#		self._session._enable_skinning()
 		for scene_index in range(num_scenes):
 			scene = self._session.scene(scene_index)
 			for track_index in range(num_tracks):
@@ -136,7 +136,7 @@ class Midi_Fighter_64(ControlSurface):
 		self._grid = ButtonMatrixElement(rows=[self._pads[(index*num_tracks):(index*num_tracks)+num_tracks] for index in range(num_scenes)])
 		self._session.set_clip_launch_buttons(self._grid)
 		# LED feedback
-		self._session._enable_skinning()
+#		self._session._enable_skinning()
 		for scene_index in range(num_scenes):
 			scene = self._session.scene(scene_index)
 			for track_index in range(num_tracks):
@@ -148,16 +148,16 @@ class Midi_Fighter_64(ControlSurface):
 				#clip_slot.set_started_value(127)
 				clip_slot.set_recording_value(13)
 		# session navigation
-		self.session_up = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 64)
+		self.session_up = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 64)
 		self.session_up.set_on_off_values(25, 31)
 		self._session.set_page_up_button(self.session_up)
-		self.session_down = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 65)
+		self.session_down = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 65)
 		self.session_down.set_on_off_values(25, 31)
 		self._session.set_page_down_button(self.session_down)
-		self.session_left = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 66)
+		self.session_left = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 66)
 		self.session_left.set_on_off_values(25, 31)
 		self._session.set_page_left_button(self.session_left)
-		self.session_right = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 67)
+		self.session_right = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 67)
 		self.session_right.set_on_off_values(25, 31)
 		self._session.set_page_right_button(self.session_right)
 		self._session._link()
@@ -223,7 +223,7 @@ class Midi_Fighter_64(ControlSurface):
 		self._scene_launch_buttons = ButtonMatrixElement(rows=[self._scene_launch_buttons])
 		self._session.set_scene_launch_buttons(self._scene_launch_buttons)
 		# LED feedback
-		self._session._enable_skinning()
+#		self._session._enable_skinning()
 		for scene_index in range(num_scenes):
 			scene = self._session.scene(scene_index)
 			scene.set_scene_value(127)
@@ -353,7 +353,7 @@ class Midi_Fighter_64(ControlSurface):
 		mute_specific_4.set_on_off_values(37, 43)
 		self.mixer.channel_strip(4).set_mute_button(mute_specific_4)
 		self.mixer.channel_strip(4).set_invert_mute_feedback(True)
-		mute_specific_5 = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 81)
+		mute_specific_5 = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 81)
 		mute_specific_5.set_on_off_values(37, 43)
 		self.mixer.channel_strip(5).set_mute_button(mute_specific_5)
 		self.mixer.channel_strip(5).set_invert_mute_feedback(True)
@@ -384,7 +384,7 @@ class Midi_Fighter_64(ControlSurface):
 		self._track_stop_buttons = [ConfigurableButtonElement(stop_track_is_momentary[index], stop_track_types[index], stop_track_channels[index], stop_track_buttons[index]) for index in range(num_tracks)]
 		self._session.set_stop_track_clip_buttons(tuple(self._track_stop_buttons))
 		# LED feedback
-		self._session._enable_skinning()
+#		self._session._enable_skinning()
 		self._session.set_stop_clip_triggered_value(61)
 		self._session.set_stop_clip_value(127)
 		for scene_index in range(num_scenes):
@@ -392,10 +392,16 @@ class Midi_Fighter_64(ControlSurface):
 			for track_index in range(num_tracks):
 				clip_slot = scene.clip_slot(track_index)
 		# session navigation
-		self.session_left = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 66)
+		self.session_up = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 64)
+		self.session_up.set_on_off_values(25, 31)
+		self._session.set_page_up_button(self.session_up)
+		self.session_down = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 65)
+		self.session_down.set_on_off_values(25, 31)
+		self._session.set_page_down_button(self.session_down)
+		self.session_left = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 66)
 		self.session_left.set_on_off_values(25, 31)
 		self._session.set_page_left_button(self.session_left)
-		self.session_right = ConfigurableButtonElement(0, MIDI_NOTE_TYPE, 1, 67)
+		self.session_right = ConfigurableButtonElement(1, MIDI_NOTE_TYPE, 1, 67)
 		self.session_right.set_on_off_values(25, 31)
 		self._session.set_page_right_button(self.session_right)
 		self._session._link()
